@@ -234,9 +234,48 @@ function writeDetails(total) {
     </ul>`;
 }
 
+/* Ne rien mettre si il n'y a rien */
+
+function clearOutputs() {
+  // barre + badge
+  bar.style.width = "0%";
+  badge.textContent = "";
+  badge.classList.remove("err", "warn", "ok");
+
+  // textes
+  decisionText.textContent = "";
+  inscText.textContent = "";
+  inscAlertBox.className = "insc-alert";
+  inscAlertBox.textContent = "";
+  res.innerHTML = "";
+
+  // kpis (facultatif : les remettre à zéro visuel)
+  kAcq0.textContent = "—";
+  kRest0.textContent = "—";
+  kPAE0.textContent = "—";
+  kPrev.textContent = "—";
+  kYear.textContent = "—";
+  kTotal.textContent = "—";
+  kRest.textContent = "—";
+}
 /* ====== Compute & Render ====== */
 function computeAndRender() {
   const used = parseInt(inscPrecSel.value, 10) || 0;
+
+  // valeurs brutes tapées (sans les convertir)
+  const vSingle = singleInput?.value?.trim();
+  const vPrev = prevInput?.value?.trim();
+  const vYear = yearInput?.value?.trim();
+
+  // 👉 si aucune valeur n'est renseignée, on nettoie et on sort
+  const noInputFirst = used === 0 && !vSingle;
+  const noInputCumul = used > 0 && !vPrev && !vYear;
+  if (noInputFirst || noInputCumul) {
+    clearOutputs();
+    return;
+  }
+
+  // --- suite : ton calcul normal ---
   let total = 0,
     prev = 0,
     year = 0;
@@ -265,21 +304,24 @@ function computeAndRender() {
 
   const insc = computeInscriptions(total, used);
   inscText.textContent = insc.msg;
+
   inscAlertBox.className = "insc-alert";
   inscAlertBox.textContent = "";
   if (insc.alert) {
     inscAlertBox.classList.add("show", insc.level === "err" ? "err" : "warn");
     inscAlertBox.textContent = insc.alert;
   }
+
   writeDetails(total);
 }
 
+
 function onChangeInscriptions() {
   toggleUI();
-  computeAndRender();
 }
 inscPrecSel.addEventListener("change", onChangeInscriptions);
 btn.addEventListener("click", computeAndRender);
+
 [singleInput, prevInput, yearInput, yearsElsewhereEl].forEach((el) => {
   el?.addEventListener("keydown", (e) => {
     if (e.key === "Enter") computeAndRender();
