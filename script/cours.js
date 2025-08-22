@@ -113,19 +113,6 @@ resetBtn?.addEventListener("click", () => {
   updateSummary();
 });
 
-// Copier le total (optionnel)
-copyBtn?.addEventListener("click", async () => {
-  const t = sumEl?.textContent || "0";
-  try {
-    await navigator.clipboard.writeText(`${t}/60 ECTS`);
-    const old = copyBtn.textContent;
-    copyBtn.textContent = "✅ Copié";
-    setTimeout(() => (copyBtn.textContent = old), 1200);
-  } catch {
-    alert("Copie impossible sur ce navigateur.");
-  }
-});
-
 // Mémoriser l’état de l’accordéon
 ectsAccordion?.addEventListener("toggle", () => {
   try {
@@ -144,7 +131,7 @@ ectsAccordion?.addEventListener("toggle", () => {
   try {
     await loadCoursesFromServer();
   } catch (e) {
-    console.warn("Impossible de charger les cours depuis l’ESI :", e);
+    alert("Impossible de charger les cours depuis l’ESI :", e);
     B1_COURSES = []; // (tu peux mettre un fallback local ici si tu veux)
   }
   renderList();

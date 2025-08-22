@@ -86,7 +86,7 @@ async function generatePdfReport() {
       // Android + desktop : téléchargement via <a download>
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Rapport_Bloc1.pdf";
+      a.download = "Rapport_CredESI.pdf";
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -102,7 +102,7 @@ async function generatePdfReport() {
       err.id = "pdf-error";
       err.className = "insc-alert err show";
       err.textContent =
-        "Impossible de générer le PDF (vérifie l’URL du modèle et réessaie).";
+        " 🔄 Veuillez recharger la page et réessayer, plusieurs fois si nécessaire. (C’est une petite erreur qui peut arriver ^^)";
       box.appendChild(err);
     }
   }
