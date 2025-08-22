@@ -27,6 +27,29 @@ const inscText = document.getElementById("inscText");
 const inscAlertBox = document.getElementById("inscAlert");
 const res = document.getElementById("result");
 
+/* === Loader ====================================================================================================== */
+const AppLoader = (() => {
+  const el = document.getElementById("app-loader");
+
+  function show(text = "Chargement…") {
+    if (!el) return;
+    el.querySelector(".loader-text").textContent = text;
+    el.classList.remove("is-hide");
+    document.body.style.overflow = "hidden"; // évite le scroll derrière
+  }
+
+  function hide() {
+    if (!el) return;
+    el.classList.add("is-hide");
+    // petit délai pour laisser l’anim se terminer
+    setTimeout(() => {
+      document.body.style.overflow = "";
+    }, 500);
+  }
+
+  return { show, hide };
+})();
+
 /* Nouveaux champs UI */
 const isReorientEl = document.getElementById("isReorient");
 const yearsElsewhereEl = document.getElementById("yearsElsewhere");
@@ -315,7 +338,6 @@ function computeAndRender() {
   writeDetails(total);
 }
 
-
 function onChangeInscriptions() {
   toggleUI();
 }
@@ -366,3 +388,4 @@ function closeDrawer2() {
   closeDrawer();
   hambox?.classList.remove("is-open");
 }
+

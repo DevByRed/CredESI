@@ -1,0 +1,36 @@
+/* === Splash Screen === */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff; /* fond blanc */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.splash-logo {
+  width: 300px;
+  height: auto;
+  animation: splash-zoom 1.5s ease-in-out infinite;
+}
+
+/* Animation du logo */
+@keyframes splash-zoom {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+/* État caché (après fade-out) */
+#splash-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+}
