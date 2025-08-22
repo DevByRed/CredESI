@@ -1,0 +1,19 @@
+.btn-purple {
+  background: linear-gradient(180deg, #7b1fa2, #4a148c);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.05s, filter 0.2s, box-shadow 0.2s;
+  box-shadow: 0 10px 24px rgba(74, 20, 140, 0.25);
+}
+.btn-purple:hover {
+  filter: brightness(1.05);
+}
+.btn-purple:active {
+  transform: translateY(1px);
+}

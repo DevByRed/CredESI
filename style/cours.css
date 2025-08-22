@@ -1,0 +1,198 @@
+/* ===== Accordéon (dépliable) ===== */
+.ects-accordion {
+  border: 1px solid #e7eefb;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(9, 30, 66, 0.06);
+  margin: 16px 0;
+  overflow: hidden;
+}
+.ects-accordion__summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  color: #0b1a2a;
+}
+.ects-accordion__summary:hover {
+  background: #fafbff;
+}
+.ects-accordion__spacer {
+  flex: 1;
+}
+.ects-badge {
+  background: #eef3ff;
+  color: #2f5aff;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+.ects-chev {
+  width: 22px;
+  height: 22px;
+  margin-left: 8px;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+.ects-accordion[open] .ects-chev {
+  transform: rotate(180deg);
+}
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ===== Carte / tête ===== */
+.ects-card {
+  padding: 18px 18px 12px;
+}
+.ects-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.ects-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ects-progress-bar {
+  width: 180px;
+  height: 8px;
+  background: #eef2ff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.ects-progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #2f5aff;
+  transition: width 0.3s ease;
+}
+.ects-progress-info {
+  font-weight: 600;
+  color: #0b1a2a;
+}
+
+/* ===== Toolbar ===== */
+.ects-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 6px;
+  flex-wrap: wrap;
+}
+.ects-tabs {
+  display: flex;
+  gap: 8px;
+}
+.ects-tab {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #dbe7ff;
+  background: #fff;
+  color: #0b1a2a;
+  font-weight: 600;
+}
+.ects-tab.is-active {
+  background: #eef3ff;
+  border-color: #c9d8ff;
+  color: #2f5aff;
+}
+.ects-search input {
+  padding: 10px 12px;
+  border: 1px solid #dbe7ff;
+  border-radius: 12px;
+  min-width: 220px;
+}
+
+/* ===== Liste des cours ===== */
+.ects-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px 14px;
+  margin-top: 8px;
+}
+.ects-row {
+  display: contents;
+}
+.ects-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+.ects-row.is-checked .ects-left {
+  background: #fafbff;
+}
+.ects-name {
+  font-weight: 600;
+  color: #0b1a2a;
+  line-height: 1.35;
+}
+.ects-badge-ects {
+  align-self: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: #eef3ff;
+  color: #2f5aff;
+}
+.ects-row.is-checked .ects-badge-ects {
+  background: #2f5aff;
+  color: #fff;
+}
+
+/* ===== Footer collant ===== */
+.ects-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 14px;
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.9) 40%,
+    #fff 100%
+  );
+  padding-top: 10px;
+}
+.ects-btn.primary {
+  background: #2f5aff;
+  color: #fff;
+  border: 2px solid #2f5aff;
+  font-weight: 700;
+}
+.ects-btn.ghost {
+  background: #fff;
+  color: #0b1a2a;
+  border: 1px solid #dbe7ff;
+}
+
+.ects-hint {
+  font-size: 0.85rem;
+  color: #6b7a90;
+  margin: 8px 2px 0;
+}
+
+/* Accessibilité focus */
+.ects-tab:focus-visible,
+.ects-btn:focus-visible,
+.ects-search input:focus-visible,
+.ects-left:has(input:focus-visible) {
+  outline: 3px solid #9db5ff;
+  outline-offset: 2px;
+}
