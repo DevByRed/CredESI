@@ -7,13 +7,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 1s ease, visibility 1s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .splash-logo {
   width: 300px;
   height: auto;
-  animation: splash-zoom 1.5s ease-in-out infinite;
+  animation: splash-zoom 1s ease-in-out infinite;
 }
 
 /* Animation du logo */

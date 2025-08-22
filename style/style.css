@@ -563,3 +563,17 @@ footer {
 .drawer {
   z-index: 10020;
 } /* panneau */
+
+.disclaimer {
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #5a5a5a;
+  background: #fff8e6;
+  border: 1px solid #f2d184;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
