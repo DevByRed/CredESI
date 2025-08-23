@@ -1,0 +1,23 @@
+COMMANDES A FAIRE POUR INIT CredHE2B
+
+- Initialiser le projet Node.js : ' npm init -y  '    |  # 📦 Génère un fichier package.json avec les infos de base
+
+- Installer netlify :  ' npm i -g netlify-cli '  | # ⚡ Installe l’outil en ligne de commande de Netlify
+
+- Vérifier version netlify :  ' netlify -v ' | # 🔍 Permet de confirmer que Netlify CLI est bien installé et voir la version.
+
+- se login pour netlify : netlify login  | # 🔑 Ouvre une page web pour te connecter à ton compte Netlify - Indispensable pour pouvoir déployer ton projet.
+
+- installer cheerio  : npm i cheerio | # 🟢 Cheerio : pour parser du HTML (ex. la grille des cours ESI).
+
+- Installer netlify functions :  " npm install   @netlify/functions "  | # ⚡ @netlify/functions : pour écrire des fonctions serverless qui tournent sur Netlify (ton backend).
+
+- Installer netlify blobs : " npm install  @netlify/blobs  " | # 💾 @netlify/blobs : pour stocker et lire des données JSON persistantes directement sur Netlify.
+
+- lancer la page en localhost : " netlify dev "  | # 🖥️ Démarre un serveur local → tu peux tester tes fonctions et ton site avant de déployer sur Netlify.
+
+
+
+EN GROS 🛠️ Dépendances à installer pour CredHE2B complet : ------------------
+
+- npm install cheerio @netlify/functions axios
