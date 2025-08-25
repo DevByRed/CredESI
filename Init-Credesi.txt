@@ -20,4 +20,4 @@ COMMANDES A FAIRE POUR INIT CredHE2B
 
 EN GROS 🛠️ Dépendances à installer pour CredHE2B complet : ------------------
 
-- npm install cheerio @netlify/functions axios
+- npm install cheerio @netlify/functions 
