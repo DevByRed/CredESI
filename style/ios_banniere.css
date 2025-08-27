@@ -1,29 +1,26 @@
-/* Bannière glassmorphisme */
+/* Bannière installation (en haut, lisible et responsive) */
 .install-banner {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px) saturate(120%);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
-  color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 120px; /* limite la hauteur */
+  overflow-y: auto; /* scroll si trop long */
+  background: rgba(255, 255, 255, 0.9); /* fond clair, lisible */
+  backdrop-filter: blur(4px); /* très léger glass */
+  -webkit-backdrop-filter: blur(4px);
+  color: #1a1a1a; /* texte foncé */
   font-size: 0.9rem;
-  padding: 14px 18px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 9999;
-  max-width: 90%;
-  text-align: left;
-  animation: slideUp 0.4s ease;
+  animation: slideDown 0.3s ease;
 }
 
 .banner-content {
-  flex: 1;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .install-banner.hidden {
@@ -31,28 +28,28 @@
 }
 
 #close-banner {
-  background: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
   border: none;
-  color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  color: #444;
 }
 
 #close-banner:hover {
-  background: rgba(255, 255, 255, 0.4);
+  color: #000;
 }
 
-@keyframes slideUp {
+@keyframes slideDown {
   from {
     opacity: 0;
-    transform: translate(-50%, 20px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
 }
