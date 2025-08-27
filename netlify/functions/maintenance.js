@@ -5,7 +5,7 @@ let endTime = null; // Variable globale, partagée entre les appels
 export async function handler(event, context) {
   // Durée de la mise à jour en secondes (tu modifies seulement ça)
   // 1h = 3600s, 50min = 3000s, 40min = 2400s, 30min = 1800s, 20min = 1200s, 15min = 900s, 10min = 600s
-  const duration = 1800; // 30 min (exemple)
+  const duration = 1800;
 
   // Heure actuelle côté serveur
   const now = Date.now();
