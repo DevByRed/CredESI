@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style/loader.css" />
     <link rel="stylesheet" href="style/popup.css" />
     <link rel="stylesheet" href="style/mise_a_jour_panneau.css">
+    <link rel="stylesheet" href="style/ios_banniere.css">
 
     <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#2563eb">
@@ -193,12 +194,26 @@
     <main>
       <!-- Bandeau de mise à jour -->
        <!--class :  SHOW = Visible  | Hidden = caché -->
-<div id="update-banner" class="hidden">
+<div id="update-banner" class="show">
   <p>🔧 Mise à jour en cours – Fin estimée dans :  <span id="timer">14:36</span></p>
   <div class="progress-bar">
     <div id="progress"></div>
   </div>
 </div>
+
+<div id="install-banner" class="install-banner">
+  <h3>📲 Installe CredESI</h3>
+  <p>Ajoute CredESI directement sur ton écran d’accueil :</p>
+  <ul>
+    <li>🍏 Sur iPhone (Safari) : Partager → Ajouter à l’écran d’accueil</li>
+    <li>🤖 Sur Android/Firefox : Menu ⋮ → Ajouter à l’écran d’accueil</li>
+    <li>💻 Sur Chrome/Edge : Menu ⋮ → Installer l’application</li>
+  </ul>
+  <button id="close-banner">Fermer ✖</button>
+</div>
+
+
+
 
       <img src="img/Logo CredESI/CredESI-Logo1.png" alt="" width="400" />
 
@@ -566,6 +581,8 @@ function toggleUpdateDetails(box) {
       .catch((err) => console.error("❌ Erreur Service Worker:", err));
   }
 
+
+  
 </script>
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="script/pdf.js"></script>
@@ -573,5 +590,6 @@ function toggleUpdateDetails(box) {
     <script src="script/script.js"></script>
     <script src="script/loader.js"></script>
     <script src="script/popup.js"></script>
+    <script src="script/ios_banniere.js"></script>
   </body>
 </html>

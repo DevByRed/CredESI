@@ -1,0 +1,72 @@
+/* Fond similaire à index.html mais bleu plus visible */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f0f6ff 0%, #d6e6ff 40%, #b9d3ff 100%);
+  color: #1e3a8a;
+  text-align: center;
+}
+
+/* Conteneur principal */
+.offline-container {
+  margin: auto;
+  padding: 30px 25px;
+  border-radius: 14px;
+  max-width: 420px;
+  width: 90%;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.offline-logo {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+/* Titres et texte */
+h1 {
+  font-size: 1.6rem;
+  margin: 10px 0 14px;
+  color: #1e3a8a;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 6px 0;
+  color: #374151;
+}
+
+/* Bouton Réessayer */
+button {
+  margin-top: 18px;
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* Footer signature */
+.offline-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  background: transparent;
+}
