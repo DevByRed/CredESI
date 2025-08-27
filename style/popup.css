@@ -1,0 +1,28 @@
+#update-banner {
+  display: none; /* caché par défaut */
+  background: #c0392b;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#update-banner.show {
+  display: block; /* devient visible si on ajoute la classe "show" */
+}
+
+.progress-bar {
+  margin-top: 12px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+#progress {
+  height: 100%;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}

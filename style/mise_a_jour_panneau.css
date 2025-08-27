@@ -1,0 +1,123 @@
+/* === Carte principale === */
+.update-box {
+  background: rgba(34, 197, 94, 0.15); /* vert glassmorphisme */
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+  color: #f1f5f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+.update-box:hover {
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.3);
+}
+
+/* === En-tête === */
+
+.update-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.version {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a7f3d0;
+  margin-right: 12px;
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.update-box.open .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* === Détails === */
+.update-details {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e5e7eb;
+}
+
+.update-box.open .update-details {
+  display: block;
+}
+
+update-category
+
+/* === Items === */
+.update-item {
+  display: flex;
+  align-items: flex-start; /* badge aligné en haut */
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.update-item ul {
+  margin: 0;
+  padding-left: 18px; /* espace pour les puces */
+  flex: 1; /* prend toute la largeur restante */
+  word-break: break-word; /* casse les mots trop longs */
+  white-space: normal; /* autorise le retour à la ligne */
+}
+
+.update-item li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.update-item span.tag {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap; /* le badge reste toujours sur une seule ligne */
+}
+
+/* Ajustement du texte */
+.update-item p,
+.update-item div {
+  margin: 0;
+  line-height: 1.4;
+  flex: 1; /* permet au texte de prendre l’espace restant */
+}
+
+/* Couleurs des tags */
+.tag.new {
+  background: #16a34a;
+  color: white;
+}
+
+.tag.improved {
+  background: #2563eb;
+  color: white;
+}
+
+.tag.fixed {
+  background: #dc2626;
+  color: white;
+}
+/* === Date === */
+
+.update-date {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #9ca3af;
+}
