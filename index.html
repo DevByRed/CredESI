@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="style/loader.css" />
     <link rel="stylesheet" href="style/popup.css" />
     <link rel="stylesheet" href="style/mise_a_jour_panneau.css">
+
+    <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#2563eb">
+
   </head>
   <body>
     <!--  -------------------------------------------------------- Overlay MOBILE ----------------------------------------------------------->
@@ -556,7 +560,11 @@ function toggleUpdateDetails(box) {
 }
 
 
-
+ if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("✅ Service Worker enregistré"))
+      .catch((err) => console.error("❌ Erreur Service Worker:", err));
+  }
 
 </script>
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
