@@ -7,7 +7,7 @@ async function fetchMaintenance() {
     console.log("🕒 Fin prévue :", data.endTimeFormatted);
 
     // Timer basé sur le temps serveur
-    let remaining = Math.floor((data.endTime - Date.now()) / 1000);
+    let remaining = data.remaining;
 
     const interval = setInterval(() => {
       if (remaining <= 0) {
