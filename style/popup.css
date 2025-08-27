@@ -26,3 +26,21 @@
   background: #fff;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
+
+/* style pour le bandeau terminé */
+#update-banner.update-done {
+  background: linear-gradient(180deg, #2ecc71, #27ae60);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(39, 174, 96, 0.25);
+  border-radius: 10px;
+}
+
+/* si tu veux masquer la "piste" derrière la barre (optionnel) */
+#update-banner.update-done .progress-bar {
+  display: none;
+}
+
+/* si tu veux un minimum d'espacement/alignement */
+.update-done-content {
+  padding: 14px 18px;
+}
