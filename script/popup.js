@@ -6,9 +6,6 @@ async function fetchMaintenance() {
     console.log("⏳ Durée :", data.duration, "s");
     console.log("🕒 Fin prévue :", data.endTimeFormatted);
 
-    // Affichage sur la page
-    document.getElementById("end-time").textContent = data.endTimeFormatted;
-
     // Timer basé sur le temps serveur
     let remaining = Math.floor((data.endTime - Date.now()) / 1000);
 
