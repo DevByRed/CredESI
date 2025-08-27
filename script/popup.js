@@ -3,10 +3,15 @@ async function fetchMaintenance() {
     const res = await fetch("/.netlify/functions/maintenance");
     const data = await res.json();
 
-    console.log("⏳ Durée :", data.duration, "s");
     console.log("🕒 Fin prévue :", data.endTimeFormatted);
 
-    // Timer basé sur le temps serveur
+    // Affiche l'heure exacte de fin dans ton HTML (si tu veux)
+    const endTimeEl = document.getElementById("end-time");
+    if (endTimeEl) {
+      endTimeEl.textContent = data.endTimeFormatted;
+    }
+
+    // Utilise directement le temps restant envoyé par le serveur
     let remaining = data.remaining;
 
     const interval = setInterval(() => {
@@ -23,7 +28,7 @@ async function fetchMaintenance() {
       }
     }, 1000);
   } catch (err) {
-    console.error("Erreur récupération maintenance :", err);
+    console.error("❌ Erreur récupération maintenance :", err);
   }
 }
 
