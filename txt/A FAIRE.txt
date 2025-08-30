@@ -1,0 +1,21 @@
+1. 🎨 Design / UX ---------
+
+Dark mode / Light mode : les étudiants adorent basculer (surtout le soir en révisions).
+
+
+2. 📄 Pages à ajouter ---------
+
+Accueil clair : explication du but du site en 3 phrases → “Aide ESI : comprendre ton parcours, gérer tes crédits, réussir tes études”.
+
+Page Décret : résumé pédagogique (tableaux + schémas) du décret paysage ancien et nouveau.
+
+Page Maintenance (tu l’as déjà avec ton popup, mais tu peux la transformer en vraie page statique pour expliquer ce qui est en cours).
+
+Contact / Aide : formulaire simple (ou redirection Discord CE).
+
+Ressources utiles : PDF officiels HE2B, liens vers JONAS, horaires, etc.
+
+3.  🚀 Fonctionnalités techniques avancées ---
+
+Notifications push (via OneSignal ou Firebase) → exemple : alerte “Fin de maintenance prévue à 14h30”.
+

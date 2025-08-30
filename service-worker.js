@@ -1,5 +1,5 @@
 // Nom du cache → incrémente quand tu modifies des fichiers importants
-const CACHE_NAME = "credesi-cache-v3";
+const CACHE_NAME = "credesi-cache-v4";
 
 // Liste des fichiers à pré-cacher (modifie selon ton projet)
 const urlsToCache = [

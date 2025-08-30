@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="style/loader.css" />
     <link rel="stylesheet" href="style/popup.css" />
     <link rel="stylesheet" href="style/mise_a_jour_panneau.css">
-    <link rel="stylesheet" href="style/ios_banniere.css">
+    <link rel="stylesheet" href="style/popup_form.css">
+    <link rel="stylesheet" href="style/form.css">
 
     <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#2563eb">
@@ -81,6 +82,7 @@
   <a href="#rapport">📑 Rapport PDF</a>
     <a href="#secretariat">📩 Contacter le secrétariat</a>
   <a href="#faq">❓ FAQ</a>
+  <a href="#contact">💬 Contact – Question ou signalement de bug</a>
 </div>
       <div class="sb-title" style="margin-top: 22px">🎬 Vidéos</div>
       <div class="sb-links">
@@ -125,7 +127,7 @@
   </div>
 
   <div class="update-details">
-    <div class="update-item">
+    <div class="update-item">   
       <span class="tag new">Nouveau</span> 
       <ul>
         <li>
@@ -158,6 +160,7 @@
       <a href="#rapport">📑 Rapport PDF</a>
         <a href="#secretariat">📩 Contacter le secrétariat</a>
       <a href="#faq">❓ FAQ</a>
+       <a href="#contact">💬 Contact – Question ou signalement de bug</a>
     </div>
       <div class="sb-title" style="margin-top: 22px">🎬 Vidéos</div>
       <div class="sb-links">
@@ -200,15 +203,10 @@
     <div id="progress"></div>
   </div>
 </div>
-
-
-
-
-
       <img src="img/Logo CredESI/CredESI-Logo1.png" alt="" width="400" />
 
 
-      <h1>
+      <h1 class="title">
         Un Suivi clair de tes crédits pour réussir ton Bloc 1 à l'ESI
       </h1>
       <br />
@@ -526,10 +524,54 @@ L’objectif est de vous donner une estimation la plus proche possible de votre 
           </details>
         </section>
       </div>
+      <!-- Contact form ------------------------------->
+<!-- CONTACT / SUPPORT (Netlify Forms) -->
+<form name="contact" method="POST" data-netlify="true" class="contact-form card-cred " id="contact">
+  <input type="hidden" name="form-name" value="contact">
 
+  <div class="row">
+    <!-- Nom -->
+    <div class="form-group">
+      <label for="name">👤 Nom</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <!-- Matricule -->
+    <div class="form-group">
+      <label for="matricule">🎓 Matricule</label>
+      <input type="text" id="matricule" name=" matricule" placeholder="ex: 64..." required>
+    </div>
+  </div>
+
+  <!-- Type -->
+  <div class="form-group">
+    <label for="type">📌 Sujet</label>
+    <select id="type" name="type" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="bug">🐛 Rapport de bug</option>
+      <option value="question">❓ Question</option>
+    </select>
+  </div>
+
+  <!-- Message -->
+  <div class="form-group">
+    <label for="message">💬 Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+
+  <button type="submit" class="btn-primary">
+    📩 Envoyer
+  </button>
+</form>
+
+
+<!-- Zone où on affichera la notification -->
+<div id="popup" class="popup">✅ Message envoyé avec succès !</div>
+
+    <!-- Splash Loader  ---------------->
       <footer>© 2025 Conseil Étudiant HE2B – ESI • Dev By Red</footer>
     </main>
-    <!-- Splash Loader -->
+ 
 <div id="splash-screen">
   <img src="img/Logo CredESI/CredESI-Logo1.png" alt="CredESI Logo" class="splash-logo">
 </div>
@@ -579,7 +621,7 @@ function toggleUpdateDetails(box) {
     <script src="script/cours.js"></script>
     <script src="script/script.js"></script>
     <script src="script/loader.js"></script>
-    <script src="script/popup.js"></script>
-    <script src="script/ios_banniere.js"></script>
+    <script src="script/popup_mise_a_jour.js"></script>
+    <script src="script/popup_form.js"></script>
   </body>
 </html>

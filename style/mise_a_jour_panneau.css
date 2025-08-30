@@ -102,16 +102,19 @@ update-category
 .tag.new {
   background: #16a34a;
   color: white;
+
 }
 
 .tag.improved {
   background: #2563eb;
   color: white;
+
 }
 
 .tag.fixed {
   background: #dc2626;
   color: white;
+  
 }
 /* === Date === */
 

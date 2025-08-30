@@ -389,3 +389,25 @@ function closeDrawer2() {
   hambox?.classList.remove("is-open");
 }
 
+// DARK MODE
+
+const toggleBtn = document.getElementById("dark-toggle");
+const body = document.body;
+
+// Charger le mode depuis localStorage si déjà choisi
+if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-mode");
+  toggleBtn.textContent = "☀️";
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+    toggleBtn.textContent = "☀️"; // soleil quand on est en dark
+  } else {
+    localStorage.setItem("theme", "light");
+    toggleBtn.textContent = "🌙"; // lune quand on est en light
+  }
+});

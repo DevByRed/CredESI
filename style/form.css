@@ -1,0 +1,119 @@
+.card-cred.contact-form {
+  /* Palette douce */
+  --blue: #2f5bd4; /* Bleu ESI principal */
+  --cyan: #4cc9f0; /* Cyan accent */
+  --violet: #6c63ff; /* Violet secondaire */
+  --bg: #f9fbff; /* Fond clair bleuté, pas blanc pur */
+  --bg2: #f1f5f9; /* Champs gris bleuté */
+  --stroke: rgba(0, 0, 0, 0.06);
+  --text: #1e293b; /* Texte foncé */
+  --muted: #64748b;
+
+  width: 100%;
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 28px;
+  color: var(--text);
+  background: var(--bg);
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+/* Liseré gradient */
+.card-cred.contact-form::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto -1px;
+  height: 3px;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(90deg, var(--blue), var(--violet), var(--cyan));
+}
+
+/* Champs */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg2);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--cyan);
+  outline: none;
+}
+
+/* Bouton */
+.btn-primary {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--blue), var(--violet), var(--cyan));
+  box-shadow: 0 4px 12px rgba(47, 91, 212, 0.2);
+  transition: transform 0.12s ease, filter 0.25s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* POPUP FORM */
+
+.popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.popup.show {
+  display: block;
+  opacity: 1; /* fondu simple */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: none !important; /* force la règle */
+  margin-bottom: 20px;
+}

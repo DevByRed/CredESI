@@ -3,7 +3,7 @@
 // ─── CONFIG ─────────────────────────────────────────────────────────────
 // Mets ta date de fin locale (Europe/Brussels) SANS fuseau.
 // Format attendu : "YYYY-MM-DDTHH:mm:ss"
-const manualEnd = "2025-08-28T00:53:00"; // ← change ici la date de fin
+const manualEnd = "2025-08-30T22:30:00"; // ← change ici la date de fin
 
 // Si tu fournis manualStart, il sera utilisé (même format que manualEnd).
 // Sinon, start sera fixé automatiquement au moment où ce fichier est chargé (moduleStart).
